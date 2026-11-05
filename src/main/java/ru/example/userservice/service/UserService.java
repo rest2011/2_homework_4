@@ -1,12 +1,13 @@
 package ru.example.userservice.service;
 
-import ru.example.userservice.model.User;
+import ru.example.userservice.dto.UserRequestDto;
+import ru.example.userservice.dto.UserResponseDto;
 import java.util.List;
 
 public interface UserService {
-    void createUser(User user);
-    User getUserById(Long id);
-    List<User> getAllUsers();
-    void updateUser(User user);
+    UserResponseDto createUser(UserRequestDto userDto);
+    UserResponseDto getUserById(Long id);
+    List<UserResponseDto> getAllUsers();
+    UserResponseDto updateUser(Long id, UserRequestDto userDto);
     void deleteUser(Long id);
 }
